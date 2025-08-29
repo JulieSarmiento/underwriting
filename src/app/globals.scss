@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.wrapper {
+    @apply grid w-[90%] my-8 mx-auto;
+}
+
+p {
+    @apply  py-6 text-sm text-gray-600;
+}
+
+:where(h1, h2, h3, h4, h5, h6) {
+    color: #791eae;
+    font-weight: bold;
+}

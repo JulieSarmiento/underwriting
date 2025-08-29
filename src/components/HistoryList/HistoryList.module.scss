@@ -1,0 +1,18 @@
+.history-table {
+    @apply bg-gray-100 border-separate border border-gray-400 w-full md:max-w-[75%] mx-auto;
+
+    &--header {
+        @apply border border-gray-300 text-blue-600 py-2;
+    }
+
+    &--cell {
+        @apply border border-gray-300 text-center;
+    }
+
+    &--badge {
+        @apply block rounded p-2 text-white text-sm my-2 mx-auto font-bold;
+
+        width: fit-content;
+
+    }
+}

@@ -1,0 +1,20 @@
+.decision {
+    &-section {
+        @apply grid w-[90%] my-8 mx-auto;
+
+        &--title {
+            @apply text-2xl font-bold text-gray-800;
+        }
+    }
+    &-badge {
+        @apply rounded p-2 text-white text-sm my-2 mx-auto font-bold;
+
+        width: fit-content;
+    }
+    &-list {
+        @apply list-disc list-inside;
+    }
+    &-reason-list {
+        @apply list-disc list-inside;
+    }
+}

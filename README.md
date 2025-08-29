@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Underwriting Load Application
 
-## Getting Started
+## Set up
 
-First, run the development server:
+- Clone the repository
+- Install dependencies:
+
+Tools used:
+- Node.js v22.10.0
+- Next.js as backend
+- React as frontend
+- TypeScript for type safety
+- Tailwind CSS for fast styling
+- SASS for CSS pre-processing and organization
+- PostCSS for CSS processing
+- React Hook Form for form handling
+- Zod - Validation
+- Jest for testing
+- Docker for containerization
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
+- Run the development server:
+```bash
+npm run dev
+```
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+To access the history page, you can visit [http://localhost:3000/history](http://localhost:3000/history).
+To apply for a loan, you can visit [http://localhost:3000/apply](http://localhost:3000/apply).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Run tests:
+```bash
+npm run test
+```
 
-## Learn More
+- Run Docker:
+```bash
+docker build -t loan-form-dev .
+docker run --rm -it -p 3000:3000 \
+  -v "$PWD":/app \
+  -v /app/node_modules \
+  loan-form-dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Approach to the problem
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Things I consider before starting:
+- What to use for the backend that allow me an easy setup and deployment
+- What to use for form validation
+- Where or how to store the data
+- What components I needed to build the application
+- Any tool to set a basic styling for UI
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Just as I listed the key points, I started building the application in that order, also keeping in mind the best practices for React and Next.js, and a user-friendly experience.
 
-## Deploy on Vercel
+## Some challenges and learnings
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+One challenge I faced was that I haven't used Next.js before, so I had to learn how routes work and how the file structure affects it.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+I wanted to not repeat myself if possible, and I picked Zod for validation since it allows me to share the schema between the frontend and the backend, I like that is very straightforward and easy to use.
+
+The same happened with the storage, I selected localStorage for simplicity since at the end this is a small application and setting up a database or a cloud storage service would be overkill.
+
+And tried to keep the time I spent on styling to a minimum, so I used Tailwind CSS for styling.
+
+Typescript has a lot of features, but it also has a neverending learning curve, so catching errors and debugging can be a bit challenging, specially in very complex or extensive logic.

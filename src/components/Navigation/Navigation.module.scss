@@ -1,0 +1,12 @@
+.navigation {
+    @apply grid grid-cols-2 gap-4 w-full mb-6;
+
+    &-list {
+        @apply flex gap-4 px-4 list-none;
+
+        &-item {
+            @apply rounded-full bg-indigo-400 p-4 text-white hover:bg-indigo-600;
+        }
+    }
+    
+}
