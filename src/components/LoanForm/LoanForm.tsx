@@ -92,7 +92,6 @@ export default function LoanForm() {
                 ltv: number | null;
                 reasons: string[];
             };
-            console.log('API response:', payload);
             // sets the loan record to store it
             const record: RequestLoanRecord = {
                 id: uid(),
